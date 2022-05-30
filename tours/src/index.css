@@ -1,0 +1,238 @@
+/* ---------- */
+/* variables */
+:root {
+    /* dark primary color */
+    --clr-primary-color-1:hsl(247.06, 34.69%, 9.61%);
+    --clr-primary-color-2:hsl(247.2, 34.25%, 14.31%);
+    --clr-primary-color-3:hsl(247.27, 34.02%, 19.02%);
+    --clr-primary-color-4:hsl(247.14, 34.43%, 23.92%);
+    /* primary-color */
+    --clr-primary-color-5: hsl(247, 34%, 29%);
+    /* tint primary color */
+    --clr-primary-color-6:hsl(247.2, 34.25%, 42.94%);
+    --clr-primary-color-7:hsl(247.2, 34.25%, 57.06%);
+    --clr-primary-color-8:hsl(247.2, 34.25%, 71.37%);
+    --clr-primary-color-9:hsl(247.2, 34.25%, 85.69%);
+    --clr-primary-color-10:hsl(248.57, 34.43%, 88.04%);
+    
+    /* dark grey for headlines */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* light grey for paragraph */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+
+    --clr-white:#fff;
+    --clr-black:#222;
+    --clr-red-dark:#B22727;
+
+    --dark-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    --light-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+
+    --radius: 0.25rem;
+    --spacing: 0.1rem;
+
+    --transition: all 0.25s linear;
+    --fixed-width: 620px;
+}
+
+/* global setting */
+*,
+::after,
+::before {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--clr-primary-color-10);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: var(--spacing);
+    line-height: 1.25;
+    text-transform: capitalize;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 0.875rem;
+}
+p {
+    margin-bottom: 1.25rem;
+    color: var(--clr-grey-5);
+}
+
+.btn{
+    background-color: transparent;
+    border:none;
+    display:inline-block;
+    text-transform: capitalize;
+    color: var(--clr-primary-color-5);
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-bottom:1.25rem;
+    margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+    
+    h4 {
+        font-size: 1rem;
+    }
+    
+    body {
+        font-size: 1rem;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+    .btn {
+        font-size: 1rem;
+    }
+}
+
+/* tours */
+
+main {
+    width: 90vw;
+    max-width: var(--fixed-width);
+    margin: 5rem auto;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.tour {
+    background-color: var(--clr-white);
+    border-radius: var(--radius);
+    border: none;
+    box-shadow: var(--light-shadow);
+    margin: 3rem 0;
+    transform: var(--transition);
+    padding-bottom:1.5rem;
+}
+
+.tour:hover {
+    box-shadow: var(--dark-shadow);
+}
+
+.tour img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.tour-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tour-header h4 {
+    margin-bottom: 0;
+}
+
+.tour-header,
+.tour-info {
+    padding: 0 2rem;
+}
+
+.delete-btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 0.25rem 0.5rem;
+    color:var(--clr-red-dark);
+    text-transform: capitalize;
+    background-color: transparent;
+    letter-spacing: var(--spacing);
+    border: 1px var(--clr-red-dark) solid;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.delete-btn:hover {
+    scale: 1.15;
+}
+
+
+
+.refresh{
+    width: 50vw;
+    margin: 10rem auto;
+}
+.refresh-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.refresh-btn{
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    color:var(--clr-white);
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    background-color: var(--clr-primary-color-5);
+    letter-spacing: var(--spacing);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.loading-header {
+    text-align: center;
+}

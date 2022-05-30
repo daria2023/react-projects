@@ -1,0 +1,299 @@
+/* variables */
+/* ---------- */
+
+:root {
+  /* shade color of primary color */
+  --clr-primary-1: hsl(0, 63.64%, 8.63%);
+  --clr-primary-2: hsl(0, 63.22%, 17.06%);
+  --clr-primary-3: hsl(0, 64.62%, 25.49%);
+  --clr-primary-4: hsl(0, 64.16%, 33.92%);
+  /* primary color */
+  --clr-primary-5: hsl(0, 64.06%, 42.55%);
+  /* tint color of primary color */
+  --clr-primary-6: hsl(0, 63.93%, 52.16%);
+  --clr-primary-7: hsl(0, 64.1%, 61.76%);
+  --clr-primary-8: hsl(0, 64.38%, 71.37%);
+  --clr-primary-9: hsl(0, 63.27%, 80.78%);
+  --clr-primary-10: hsl(0, 63.27%, 90.39%);
+
+  /*dark  grey color for headlines */
+  --clr-grey-1: hsl(0, 0%, 15.29%);
+  --clr-grey-2: hsl(0, 0%, 23.14%);
+  --clr-grey-3: hsl(0, 0%, 30.59%);
+  --clr-grey-4: hsl(0, 0%, 38.43%);
+  --clr-grey-5: hsl(0, 0%, 45.88%);
+  /* light grey color for paragraph */
+  --clr-grey-6: hsl(0, 0%, 54.9%);
+  --clr-grey-7: hsl(0, 0%, 63.92%);
+  --clr-grey-8: hsl(0, 0%, 72.94%);
+  --clr-grey-9: hsl(0, 0%, 81.96%);
+  --clr-grey-10: hsl(0, 0%, 90.98%);
+
+  --clr-white: #fff;
+  --clr-dark: #222;
+
+  --dark-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  --light-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+
+  --box-dark-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  --box-light-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+
+  --space: 0.1rem;
+  --radius: 0.25rem;
+
+  --fixed-width: 620px;
+}
+
+/* global setting */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--clr-grey-10);
+  color: var(--clr-grey-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  letter-spacing: var(--space);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-4);
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* setting all section */
+section {
+  display: flex;
+  width: 80vw;
+  max-width: var(--fixed-width);
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+.section-header {
+  text-align: center;
+  color: var(--clr-primary-5);
+  margin-bottom: 1rem;
+}
+
+/* error page */
+
+.err-section {
+  text-align: center;
+}
+
+/* nav bar */
+.navbar {
+  padding: 1rem 2.5rem;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  justify-items: end;
+  background-color: var(--clr-primary-5);
+  color: var(--clr-white);
+}
+.bag-icon {
+  font-size:2.5rem;
+  position: relative;
+}
+.bag-num {
+  font-size: 1.15rem;
+  font-weight: bolder;
+  width: 1.5rem;
+  height:1.5rem;
+  text-align: center;
+  position: absolute;
+  color: var(--clr-white);
+  border-radius: 50%;
+  right: 0.5rem;
+  top: 1rem;
+  font-weight: 5;
+}
+
+/* cart area */
+.cart-area-header {
+  text-align: center;
+}
+.area-footer{
+  text-align: center;
+}
+.area-footer .total{
+  margin-top:1rem;
+  display: flex;
+  justify-content: space-between;
+}
+hr {
+  border-top: 0.5px solid var(--clr-grey-5);
+}
+
+.remove-all-btn {
+  text-transform: uppercase;
+  width: 180px;
+  background-color: transparent;
+  color: var(--clr-primary-5);
+  padding: 0.35rem;
+  border: 1px solid var(--clr-primary-5);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.remove-all-btn:hover {
+  background-color: var(--clr-primary-5);
+  color: var(--clr-white);
+}
+/* cart item */
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 30px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cart-item img {
+  width: 80px;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  letter-spacing: var(--space);
+}
+
+.item-price {
+  color:var(--clr-grey-3);
+}
+
+.item-amount-area { 
+text-align: center;
+}
+.item-amount {
+  color: var(--clr-dark);
+}
+
+.amount-btn {
+  background-color: transparent;
+  border:0;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--clr-primary-5);
+}
+.amount-btn:hover {
+  scale:1.1;
+}
+
+/* empty cart  */
+.empty-cart {
+  text-align: center;
+}
+
+/* loader */
+.loader-section{
+  text-align: center;
+}
+
+.lds-dual-ring {
+  display:inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 1rem auto;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid var(--clr-primary-5);
+  border-color: var(--clr-primary-5) transparent var(--clr-primary-5) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-header {
+  color:var(--clr-primary-5);
+  margin-bottom: 2rem;
+}

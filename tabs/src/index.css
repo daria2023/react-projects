@@ -1,0 +1,252 @@
+/* variables */
+/* ---------- */
+
+:root {
+  /* shade color of primary color */
+  --clr-primary-1: hsl(201.6, 92.59%, 5.29%);
+  --clr-primary-2: hsl(201.18, 92.73%, 10.78%);
+  --clr-primary-3: hsl(202.11, 90.48%, 16.47%);
+  --clr-primary-4: hsl(201.98, 90.99%, 21.76%);
+  /* primary color */
+  --clr-primary-5: hsl(201.73, 91.37%, 27.25%);
+  /* tint color of primary color */
+  --clr-primary-6: hsl(201.66, 91.93%, 43.73%);
+  --clr-primary-7: hsl(201.71, 91.3%, 54.9%);
+  --clr-primary-8: hsl(201.65, 91.86%, 66.27%);
+  --clr-primary-9: hsl(201.71, 91.3%, 77.45%);
+  --clr-primary-10: hsl(201.51, 92.98%, 88.82%);
+
+  /*dark  grey color for headlines */
+  --clr-grey-1: hsl(0, 0%, 15.29%);
+  --clr-grey-2: hsl(0, 0%, 23.14%);
+  --clr-grey-3: hsl(0, 0%, 30.59%);
+  --clr-grey-4: hsl(0, 0%, 38.43%);
+  --clr-grey-5: hsl(0, 0%, 45.88%);
+  /* light grey color for paragraph */
+  --clr-grey-6: hsl(0, 0%, 54.9%);
+  --clr-grey-7: hsl(0, 0%, 63.92%);
+  --clr-grey-8: hsl(0, 0%, 72.94%);
+  --clr-grey-9: hsl(0, 0%, 81.96%);
+  --clr-grey-10: hsl(0, 0%, 90.98%);
+
+  --clr-white: #fff;
+  --clr-dark: #222;
+
+  --dark-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  --light-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+
+  --space: 0.1rem;
+  --radius: 0.25rem;
+
+  --fixed-width: 800px;
+}
+
+/* global setting */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--clr-grey-10);
+  color: var(--clr-grey-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  letter-spacing: var(--space);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-4);
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+
+}
+
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  padding: 2.5rem;
+  color: var(--clr-primary-5);
+}
+
+
+section {
+  width: 80vw;
+  max-width: var(--fixed-width);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* btn */
+.btns{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: var(--clr-primary-7);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--clr-primary-5);
+}
+
+.btn.show {
+  color:var(--clr-primary-5);
+  border-bottom: 1px solid var(--clr-primary-5);
+}
+
+@media screen and (min-width:800px) {
+  section {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap:2rem;
+    align-items: baseline;
+  }
+  .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items:baseline;
+  }
+  .btn {
+    padding-left: 1rem;
+  }
+    .btn.show {
+      color: var(--clr-primary-5);
+      border-left: 1px solid var(--clr-primary-5);
+      border-bottom: none;
+      
+    }
+}
+
+/* container */
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.job-title{
+  font-weight: normal;
+}
+
+.job-company{
+  width:max-content;
+  display: inline-block;
+  background-color: var(--clr-grey-9);
+  color:var(--clr-grey-6);
+  padding:0.15rem 0.25rem;
+  border-radius: var(--radius);
+}
+
+.job-duty {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+
+.job-duty .icon{
+  font-size: 1.5rem;
+  color:var(--clr-primary-5);
+}
+
+
+/* more info */
+.more-btn {
+  margin-top: 2rem;
+  width: 180px;
+  background-color: var(--clr-primary-5);
+  color:var(--clr-grey-10);
+  border:none;
+  border-radius: var(--radius);
+  padding: 0.25rem 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: var(--space);
+  cursor: pointer;
+}
+.more-btn:hover{
+  scale: 1.15;
+}
